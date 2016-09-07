@@ -1,0 +1,21 @@
+$unit: 30px;
+$width: (4 * $unit);
+$height: (4 * $unit);
+
+.board-wrapper {
+  margin: 0 25%;
+  text-align: center;
+  width: 50%;
+}
+
+.col-xs-4 {
+  border: 1px solid $black;
+  box-sizing: border-box;
+  height: $height;
+  text-align: center;
+  width: $width;
+}
+
+.navbar-right {
+  margin: 0;
+}

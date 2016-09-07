@@ -1,20 +1,136 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic Tac Toe</title>
 
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+    <body class="container-fluid">
+      <h1>Tic Tac Toe</h1>
+      <nav class="navbar">
+        <button type="button" id="sign-in-button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#signInModal">Sign in</button>
+        <form id="sign-out">
+            <button type="submit" name="submit" class="btn btn-default navbar-btn navbar-right">Sign out</button>
+        </form>
+        <button type="button" id="change-password-button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#changePasswordModal">Change Password</button>
+      </nav>
+
+      <div class = "container">
+        <div class="board-wrapper">
+          <div class= "row">
+            <div class = "col-xs-4">
+              1
+            </div>
+            <div class = "col-xs-4">
+              2
+            </div>
+            <div class = "col-xs-4">
+              3
+            </div>
+          </div>
+          <div class= "row">
+            <div class = "col-xs-4">
+              4
+            </div>
+            <div class = "col-xs-4">
+              5
+            </div>
+            <div class = "col-xs-4">
+              6
+            </div>
+          </div>
+          <div class= "row">
+            <div class = "col-xs-4">
+              7
+            </div>
+            <div class = "col-xs-4">
+              8
+            </div>
+            <div class = "col-xs-4">
+              9
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- MODALS -->
+
+      <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Sign Up</h4>
+            </div>
+            <div class="modal-body">
+              <form id="sign-up">
+                <fieldset>
+                  <div class="form-group">
+                    <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" name="credentials[password_confirmation]" placeholder="Password Confirm">
+                  </div>
+                  <button type="submit" class="btn btn-primary pull-right" name="submit">Sign Up</button>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="signInModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Log in</h4>
+            </div>
+            <div class="modal-body">
+              <form class="form-inline" id="sign-in">
+                <fieldset>
+                  <div class="form-group">
+                    <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+                  </div>
+                  <button type="submit" class="btn btn-primary" name="submit">Log in</button>
+                </fieldset>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="sign-up-button" class="btn btn-default navbar-btn navbar-left" data-toggle="modal" data-target="#signUpModal" data-dismiss="modal">Sign up</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Change Password</h4>
+            </div>
+            <div class="modal-body">
+              <form id="change-password">
+                <fieldset>
+                  <div class="form-group">
+                    <input type="password" class="form-control" name="passwords[old]" placeholder="Old Password">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" name="passwords[new]" placeholder="New Password">
+                  </div>
+                  <button type="submit" class="btn btn-primary pull-right" name="submit">Change Password</button>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </body>
 </html>
