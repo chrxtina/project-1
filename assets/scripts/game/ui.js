@@ -11,8 +11,8 @@ const failure = (error) => {
 };
 
 const newGameSuccess = (data) => {
-  app.game = data.id;
-  console.log(data);
+  app.game = data.game;
+  console.log(app.game);
 };
 
 

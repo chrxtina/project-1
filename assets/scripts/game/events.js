@@ -98,23 +98,25 @@ const checkWinner = function (){
       game.winner = game.player;
       game.gameOver = true;
       //Freeze but don't reset yet?
-      clearBoard();
       console.log('Winner is', game.winner);
+      clearBoard();
     }
     else if (game.turn === 9){
       game.gameOver = true;
-      clearBoard();
       alert('Tie game!');
+      clearBoard();
     }
 };
+
 
 const onClickCell= function (event) {
   event.preventDefault();
   let cell = $(event.target);
   let id = cell.data('id');
-  if($(this).html() === '') {         // if spot empty
-    if (game.turn % 2 === 0){         // x's turn on even num
-      game.player = 'x';              // set player
+
+  if($(this).html() === '') {
+    if (game.turn % 2 === 0){
+      game.player = 'x';
     } else {
       game.player = 'o';
     }
@@ -122,8 +124,7 @@ const onClickCell= function (event) {
     game.board[id] = game.player;
     game.turn++;
     checkWinner();
-    // console.log(game);
-    // api.updateGame(id,'x', game.gameOver); //update api
+    api.updateGame(id, game.player, game.gameOver);
   }
   else {
     console.log('Spot already taken!');
