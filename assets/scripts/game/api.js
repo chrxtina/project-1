@@ -48,10 +48,32 @@ const joinGame = (data) => {
   });
 };
 
+const updateGame = (index, value, over) => {
+  let token = app.user.token;
+  let game_id = app.game.id;
+  return $.ajax({
+    url: app.host + '/games/' + game_id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + token,
+    },
+    data: {
+      'game': {
+        'cell': {
+          'index': index,
+          'value': value,
+        },
+        'over': over,
+      }
+    }
+  });
+};
+
 
 module.exports = {
   newGame,
   indexGame,
   showGame,
   joinGame,
+  updateGame
 };
