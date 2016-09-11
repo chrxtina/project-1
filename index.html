@@ -2,54 +2,80 @@
 <html>
     <head>
       <title>Tic Tac Toe</title>
-
+      <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Quicksand" rel="stylesheet">
+      <link rel='shortcut icon' href='./assets/images/favicon.ico' type='image/x-icon'>
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
 
     <body class="container-fluid">
-      <h1>Tic Tac Toe</h1>
-      <nav class="navbar">
-        <!-- <button type="button" id="sign-in-button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#signInModal">Sign in</button> -->
-        <form id="sign-out">
-            <button type="submit" name="submit" class="btn btn-default navbar-btn navbar-right">Sign out</button>
-        </form>
-        <button type="button" id="change-password-button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#changePasswordModal">Change Password</button>
+      <header>
+        <h1>Tic Tac Toe</h1>
+      </header>
+
+      <nav>
+        <ul class="nav nav-pills pull-right">
+          <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              Menu <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li>
+                <form id="index-game">
+                    <button type="submit" name="submit">View Total Games</button>
+                </form>
+              </li>
+              <li>
+                <form id="join-game">
+                  <button type="submit" name="submit">Join Game</button>
+                  <input type="text" name="game[id]" id="join-game-id" placeholder="Game ID">
+                </form>
+              </li>
+              <li><hr/></li>
+              <li>
+                <button type="button" id="change-password-button"  data-toggle="modal" data-target="#changePasswordModal">Change Password</button>
+              </li>
+              <li>
+                <form id="sign-out">
+                  <button type="submit"  name="submit">Sign out</button>
+                </form>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </nav>
 
-      <div id="message"> </div>
+      <section>
+        <div id="message"></div>
+      </section>
 
-      <div class ="container">
-        <div class="board-wrapper">
-          <div class= "row">
-            <div class="col-xs-4 cell" data-id="0"></div>
-            <div class="col-xs-4 cell" data-id="1"></div>
-            <div class="col-xs-4 cell" data-id="2"></div>
+      <main>
+        <div class ="container">
+          <div class="board-wrapper">
+            <div class= "row">
+              <div class="col-xs-4 col-xs-offset-2 cell" data-id="0"></div>
+              <div class="col-xs-4 cell" data-id="1"></div>
+              <div class="col-xs-4 cell" data-id="2"></div>
+            </div>
+            <div class="row">
+              <div class="col-xs-4 col-xs-offset-2 cell" data-id="3"></div>
+              <div class="col-xs-4 cell" data-id="4"></div>
+              <div class="col-xs-4 cell" data-id="5"></div>
+            </div>
+            <div class="row">
+              <div class="col-xs-4 col-xs-offset-2 cell" data-id="6"></div>
+              <div class="col-xs-4 cell" data-id="7"></div>
+              <div class="col-xs-4 cell" data-id="8"></div>
+            </div>
           </div>
-          <div class="row">
-            <div class="col-xs-4 cell" data-id="3"></div>
-            <div class="col-xs-4 cell" data-id="4"></div>
-            <div class="col-xs-4 cell" data-id="5"></div>
-          </div>
-          <div class="row">
-            <div class="col-xs-4 cell" data-id="6"></div>
-            <div class="col-xs-4 cell" data-id="7"></div>
-            <div class="col-xs-4 cell" data-id="8"></div>
-          </div>
+          <button class="btn btn-default center-block reset-board">Done</button>
         </div>
-      </div>
 
-      <button class="btn btn-default pull-right reset-board">Done</button>
+        <form id="new-game">
+            <button type="submit" name="submit" class="btn btn-default center-block new-game-button">New Game</button>
+        </form>
 
-      <form id="index-game">
-          <button type="submit" name="submit" class="btn btn-default">Total Games</button>
-      </form>
-
-      <div id="index-game-result"></div>
-
-      <form id="new-game">
-          <button type="submit" name="submit" class="btn btn-default">New Game</button>
-      </form>
+      </main>
 
       <!-- <form id="show-game">
         <input type="text" name="game[id]" id="game-id" placeholder="Game ID">
@@ -58,13 +84,8 @@
 
       <ul id="show-game-result"></ul> -->
 
-      <form id="join-game">
-        <input type="text" name="game[id]" id="join-game-id" placeholder="Game ID">
-        <button type="submit" name="submit" class="btn btn-default">Join Game</button>
-      </form>
 
 <!-- MODALS -->
-
       <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" data-backdrop="static">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -142,6 +163,5 @@
           </div>
         </div>
       </div>
-
     </body>
 </html>

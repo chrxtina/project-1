@@ -2,33 +2,44 @@
 
 const app = require('../app');
 
-const success = (data) => {
-  console.log(data);
+// const success = (data) => {
+//   console.log(data);
+// };
+
+const joinGameSuccess = function (data) {
+  document.getElementById("message").innerHTML = 'Successfully joined game '+ data.game.id;
+  $('#message').fadeIn('fast').delay(4000).fadeOut('fast');
 };
 
 const failure = (error) => {
-  console.error(error);
+  console.log(error);
+  document.getElementById("message").innerHTML = 'Error: ' + error.statusText;
+  $('#message').fadeIn('fast').delay(4000).fadeOut('fast');
 };
 
 const displayBoard = function (){
   $('.board-wrapper').css('display', 'block');
 };
 
+const hideNewGameButton = function() {
+  $('#new-game').hide();
+};
+
 const newGameSuccess = (data) => {
   app.game = data.game;
   displayBoard();
-  console.log(app.game);
+  hideNewGameButton();
 };
 
 const onIndexGameSuccess = (data) => {
-  console.log(data);
-  document.getElementById("index-game-result").innerHTML = '# Games: '+ data.games.length;
-  $('#index-game-result').fadeIn('fast').delay(3000).fadeOut('fast');
+  document.getElementById("message").innerHTML = '# Games: '+ data.games.length;
+  $('#message').fadeIn('fast').delay(4000).fadeOut('fast');
 };
 
 module.exports = {
-  success,
+  // success,
   failure,
+  joinGameSuccess,
   newGameSuccess,
   // onShowGameSuccess,
   onIndexGameSuccess

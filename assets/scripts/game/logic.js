@@ -34,6 +34,10 @@ const resumePlay = function(){
   $('.cell').on('click', onClickCell);
 };
 
+const showNewGameButton = function() {
+  $('#new-game').show();
+};
+
 const resetBoard = function (){
   $('.cell').empty();
   player = '';
@@ -44,6 +48,7 @@ const resetBoard = function (){
   hideDoneButton();
   removeBoard();
   resumePlay();
+  showNewGameButton();
 };
 
 const checkWinner = function (){
@@ -61,7 +66,6 @@ const checkWinner = function (){
       winner = player;
       gameOver = true;
       setMessage('Winner is '+ winner);
-      console.log('winner is', winner);
     }
   else if (turn === 9){
     gameOver = true;
@@ -80,9 +84,9 @@ const onClickCell= function (event) {
 
   if($(this).html() === '') {
     if (turn % 2 === 0){
-      player = 'x';
+      player = 'X';
     } else {
-      player = 'o';
+      player = 'O';
     }
     $(this).text(player);
     board[id] = player;

@@ -2,6 +2,11 @@ $unit: 30px;
 $width: (4 * $unit);
 $height: (4 * $unit);
 
+body {
+  background-image: url('../images/oceanfade.jpg');
+  background-size: cover;
+}
+
 .board-wrapper {
   display: none;
   margin: 0 25%;
@@ -12,15 +17,52 @@ $height: (4 * $unit);
 .col-xs-4 {
   border: 1px solid $black;
   box-sizing: border-box;
+  font-size: 65px;
   height: $height;
+  line-height: $height;
   text-align: center;
   width: $width;
 }
 
-.navbar-right {
-  margin: 0;
+.col-xs-offset-2 {
+  margin-left: 20%;
 }
 
 .reset-board {
   display: none;
+  margin-top: 15px;
+}
+
+li button {
+  background: 0;
+  border: 0;
+}
+
+section {
+  height: 40px;
+  text-align: center;
+}
+
+hr {
+  margin: 20px 0 5px;
+}
+
+header {
+  float: left;
+}
+
+nav {
+  float: right;
+  margin: 18px 10px 0 0;
+}
+
+section,
+main {
+  clear: both;
+}
+
+.new-game-button {
+  left: 45%;
+  position: absolute;
+  top: 50%;
 }

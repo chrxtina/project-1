@@ -16,20 +16,17 @@ const signOutSuccess = () => {
 };
 
 const changePasswordSuccess = () => {
-  console.log("Password successfully changed");
-};
-
-const success = (data) => {
-  console.log(data);
+  document.getElementById("message").innerHTML = 'Password successfully changed';
+  $('#message').fadeIn('fast').delay(4000).fadeOut('fast');
 };
 
 const failure = (error) => {
-  console.error(error);
+  document.getElementById("message").innerHTML = 'Error: ' + error.statusText;
+  $('#message').fadeIn('fast').delay(4000).fadeOut('fast');
 };
 
 module.exports = {
   failure,
-  success,
   signUpSuccess,
   signInSuccess,
   changePasswordSuccess,

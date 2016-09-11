@@ -31,7 +31,7 @@ const onJoinGame= function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.joinGame(data)
-    .done(ui.success)
+    .done(ui.joinGameSuccess)
     .fail(ui.failure);
 };
 
