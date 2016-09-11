@@ -5,12 +5,16 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api');
 const ui = require('./ui');
 
+$(window).load(function(){
+  $('#signInModal').modal('show');
+});
+
 const onSignUp = function (event) {
   event.preventDefault();
   $('#signUpModal').modal('hide');
   let data = getFormFields(event.target);
   api.signUp(data)
-    .done(ui.success)
+    .done(ui.signUpSuccess)
     .fail(ui.failure);
 };
 

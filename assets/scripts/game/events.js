@@ -15,17 +15,17 @@ const onNewGame = function (event) {
 const onIndexGame = function (event) {
   event.preventDefault();
   api.indexGame()
-    .done(ui.success)
+    .done(ui.onIndexGameSuccess)
     .fail(ui.failure);
 };
 
-const onShowGame= function (event) {
-  event.preventDefault();
-  let data = getFormFields(event.target);
-  api.showGame(data)
-    .done(ui.success)
-    .fail(ui.failure);
-};
+// const onShowGame= function (event) {
+//   event.preventDefault();
+//   let data = getFormFields(event.target);
+//   api.showGame(data)
+//     .done(ui.onShowGameSuccess)
+//     .fail(ui.failure);
+// };
 
 const onJoinGame= function (event) {
   event.preventDefault();
@@ -38,7 +38,7 @@ const onJoinGame= function (event) {
 const addHandlers = () => {
   $('#new-game').on('submit', onNewGame);
   $('#index-game').on('submit', onIndexGame);
-  $('#show-game').on('submit', onShowGame);
+  // $('#show-game').on('submit', onShowGame);
   $('#join-game').on('submit', onJoinGame);
 };
 

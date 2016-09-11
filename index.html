@@ -10,14 +10,14 @@
     <body class="container-fluid">
       <h1>Tic Tac Toe</h1>
       <nav class="navbar">
-        <button type="button" id="sign-in-button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#signInModal">Sign in</button>
+        <!-- <button type="button" id="sign-in-button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#signInModal">Sign in</button> -->
         <form id="sign-out">
             <button type="submit" name="submit" class="btn btn-default navbar-btn navbar-right">Sign out</button>
         </form>
         <button type="button" id="change-password-button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#changePasswordModal">Change Password</button>
       </nav>
 
-      <div id="message"></div>
+      <div id="message"> </div>
 
       <div class ="container">
         <div class="board-wrapper">
@@ -42,17 +42,21 @@
       <button class="btn btn-default pull-right reset-board">Done</button>
 
       <form id="index-game">
-          <button type="submit" name="submit" class="btn btn-default">Show Games</button>
+          <button type="submit" name="submit" class="btn btn-default">Total Games</button>
       </form>
+
+      <div id="index-game-result"></div>
 
       <form id="new-game">
           <button type="submit" name="submit" class="btn btn-default">New Game</button>
       </form>
 
-      <form id="show-game">
+      <!-- <form id="show-game">
         <input type="text" name="game[id]" id="game-id" placeholder="Game ID">
         <button type="submit" name="submit" class="btn btn-default">Find Game</button>
       </form>
+
+      <ul id="show-game-result"></ul> -->
 
       <form id="join-game">
         <input type="text" name="game[id]" id="join-game-id" placeholder="Game ID">
@@ -61,7 +65,7 @@
 
 <!-- MODALS -->
 
-      <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog">
+      <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" data-backdrop="static">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -83,11 +87,14 @@
                 </fieldset>
               </form>
             </div>
+            <div class="modal-footer">
+              <button type="button" id="sign-in-button" class="btn btn-default pull-left" data-toggle="modal" data-target="#signInModal" data-dismiss="modal">Back</button>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="modal fade" id="signInModal" tabindex="-1" role="dialog">
+      <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" data-backdrop="static">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">

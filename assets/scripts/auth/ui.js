@@ -2,13 +2,17 @@
 
 const app = require('../app');
 
+const signUpSuccess = () => {
+  $('#signInModal').modal('show');
+};
+
 const signInSuccess = (data) => {
   app.user = data.user;
 };
 
 const signOutSuccess = () => {
   app.user = null;
-  console.log("Successfully signed out!");
+  $('#signInModal').modal('show');
 };
 
 const changePasswordSuccess = () => {
@@ -26,6 +30,7 @@ const failure = (error) => {
 module.exports = {
   failure,
   success,
+  signUpSuccess,
   signInSuccess,
   changePasswordSuccess,
   signOutSuccess,

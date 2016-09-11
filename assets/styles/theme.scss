@@ -3,6 +3,7 @@ $width: (4 * $unit);
 $height: (4 * $unit);
 
 .board-wrapper {
+  display: none;
   margin: 0 25%;
   text-align: center;
   width: 50%;

@@ -11,7 +11,7 @@ let winner;
 
 const setMessage = function(msg) {
   document.getElementById("message").innerHTML = msg;
-  $("#message").delay(5000).fadeOut();
+  $('#message').fadeIn('fast').delay(3000).fadeOut('fast');
 };
 
 const stopPlay = function(){
@@ -26,6 +26,10 @@ const hideDoneButton = function () {
   $('.reset-board').css('display', 'none');
 };
 
+const removeBoard = function () {
+  $('.board-wrapper').css('display', 'none');
+};
+
 const resumePlay = function(){
   $('.cell').on('click', onClickCell);
 };
@@ -38,6 +42,7 @@ const resetBoard = function (){
   gameOver = false;
   winner = null;
   hideDoneButton();
+  removeBoard();
   resumePlay();
 };
 
