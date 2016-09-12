@@ -36,5 +36,5 @@ I started with creating a basic HTML/CSS skeleton in order to better visualize t
 
 ## Wireframes and User Stories
 
--Wireframe: (http://i.imgur.com/Zt4Lwev.png)
--User Stories: (https://github.com/chrxtina/game-project-scope-study/blob/response/study.md)
+- Wireframe: (http://i.imgur.com/Zt4Lwev.png)
+- User Stories: (https://github.com/chrxtina/game-project-scope-study/blob/response/study.md)
