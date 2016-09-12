@@ -32,7 +32,7 @@ const newGameSuccess = (data) => {
 };
 
 const onIndexGameSuccess = (data) => {
-  document.getElementById("message").innerHTML = '# Games: '+ data.games.length;
+  document.getElementById("message").innerHTML = 'Games played: '+ data.games.length;
   $('#message').fadeIn('fast').delay(4000).fadeOut('fast');
 };
 
