@@ -400,7 +400,7 @@ webpackJsonp([0],[
 	};
 
 	var onIndexGameSuccess = function onIndexGameSuccess(data) {
-	  document.getElementById("message").innerHTML = '# Games: ' + data.games.length;
+	  document.getElementById("message").innerHTML = 'Games played: ' + data.games.length;
 	  $('#message').fadeIn('fast').delay(4000).fadeOut('fast');
 	};
 
@@ -427,20 +427,22 @@ webpackJsonp([0],[
 
 	$(window).load(function () {
 	  $('#signInModal').modal('show');
+	  $('#sign-in-button').hide();
 	});
 
 	var onSignUp = function onSignUp(event) {
 	  event.preventDefault();
 	  $('#signUpModal').modal('hide');
 	  var data = getFormFields(event.target);
-	  api.signUp(data).done(ui.signUpSuccess).fail(ui.failure);
+	  api.signUp(data).done(ui.signUpSuccess).fail(ui.signFailure);
 	};
 
 	var onSignIn = function onSignIn(event) {
 	  event.preventDefault();
 	  $('#signInModal').modal('hide');
+	  $('#sign-in-button').hide();
 	  var data = getFormFields(event.target);
-	  api.signIn(data).done(ui.signInSuccess).fail(ui.failure);
+	  api.signIn(data).done(ui.signInSuccess).fail(ui.signFailure);
 	};
 
 	var onChangePassword = function onChangePassword(event) {
@@ -542,6 +544,12 @@ webpackJsonp([0],[
 	  app.user = data.user;
 	};
 
+	var signFailure = function signFailure() {
+	  document.getElementById("message").innerHTML = 'Sorry! Please try again';
+	  $('#message').fadeIn('fast').delay(5000).fadeOut('fast');
+	  $('#sign-in-button').show();
+	};
+
 	var signOutSuccess = function signOutSuccess() {
 	  app.user = null;
 	  $('#signInModal').modal('show');
@@ -562,7 +570,8 @@ webpackJsonp([0],[
 	  signUpSuccess: signUpSuccess,
 	  signInSuccess: signInSuccess,
 	  changePasswordSuccess: changePasswordSuccess,
-	  signOutSuccess: signOutSuccess
+	  signOutSuccess: signOutSuccess,
+	  signFailure: signFailure
 	};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
