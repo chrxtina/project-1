@@ -11,7 +11,7 @@ let winner;
 
 const setMessage = function(msg) {
   document.getElementById("message").innerHTML = msg;
-  $('#message').fadeIn('fast').delay(3000).fadeOut('fast');
+  $('#message').fadeIn('fast').delay(4000).fadeOut('fast');
 };
 
 const stopPlay = function(){
@@ -65,7 +65,7 @@ const checkWinner = function (){
     {
       winner = player;
       gameOver = true;
-      setMessage('Winner is '+ winner);
+      setMessage('Winner is '+ winner + '!');
     }
   else if (turn === 9){
     gameOver = true;
