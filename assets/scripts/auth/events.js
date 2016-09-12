@@ -7,6 +7,7 @@ const ui = require('./ui');
 
 $(window).load(function(){
   $('#signInModal').modal('show');
+  $('#sign-in-button').hide();
 });
 
 const onSignUp = function (event) {
@@ -15,16 +16,17 @@ const onSignUp = function (event) {
   let data = getFormFields(event.target);
   api.signUp(data)
     .done(ui.signUpSuccess)
-    .fail(ui.failure);
+    .fail(ui.signFailure);
 };
 
 const onSignIn = function (event) {
   event.preventDefault();
   $('#signInModal').modal('hide');
+  $('#sign-in-button').hide();
   let data = getFormFields(event.target);
   api.signIn(data)
     .done(ui.signInSuccess)
-    .fail(ui.failure);
+    .fail(ui.signFailure);
 };
 
 const onChangePassword = function (event) {
