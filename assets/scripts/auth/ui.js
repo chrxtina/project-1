@@ -10,6 +10,12 @@ const signInSuccess = (data) => {
   app.user = data.user;
 };
 
+const signFailure = () => {
+  document.getElementById("message").innerHTML = 'Sorry! Please try again';
+  $('#message').fadeIn('fast').delay(5000).fadeOut('fast');
+  $('#sign-in-button').show();
+};
+
 const signOutSuccess = () => {
   app.user = null;
   $('#signInModal').modal('show');
@@ -31,4 +37,5 @@ module.exports = {
   signInSuccess,
   changePasswordSuccess,
   signOutSuccess,
+  signFailure
 };
