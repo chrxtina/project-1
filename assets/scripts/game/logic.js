@@ -30,25 +30,8 @@ const removeBoard = function () {
   $('.board-wrapper').css('display', 'none');
 };
 
-const resumePlay = function(){
-  $('.cell').on('click', onClickCell);
-};
-
 const showNewGameButton = function() {
   $('#new-game').show();
-};
-
-const resetBoard = function (){
-  $('.cell').empty();
-  player = '';
-  board = ['','','','','','','','','',];
-  turn = 0;
-  gameOver = false;
-  winner = null;
-  hideDoneButton();
-  removeBoard();
-  resumePlay();
-  showNewGameButton();
 };
 
 const checkWinner = function (){
@@ -97,6 +80,23 @@ const onClickCell= function (event) {
   else {
     setMessage('Spot already taken!');
   }
+};
+
+const resumePlay = function(){
+  $('.cell').on('click', onClickCell);
+};
+
+const resetBoard = function (){
+  $('.cell').empty();
+  player = '';
+  board = ['','','','','','','','','',];
+  turn = 0;
+  gameOver = false;
+  winner = null;
+  hideDoneButton();
+  removeBoard();
+  resumePlay();
+  showNewGameButton();
 };
 
 const addHandlers = () => {
